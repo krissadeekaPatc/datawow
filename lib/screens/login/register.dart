@@ -140,6 +140,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               color: Colors.white,
               fontFamily: 'OpenSans',
             ),
+            keyboardType: TextInputType.name,
             decoration: InputDecoration(
               border: InputBorder.none,
               contentPadding: EdgeInsets.only(top: 14.0),
