@@ -206,9 +206,8 @@ class _ProfilesSettingState extends State<ProfilesSetting> {
                                                     null
                                                 ? NetworkImage(
                                                     snapshot.data[0].imageURL)
-                                                : Image(
-                                                    image: AssetImage(
-                                                        "assets/image/avatar.jpeg"))),
+                                                : AssetImage(
+                                                    "assets/image/avatar.jpeg")),
                                       ),
                                       SizedBox(
                                         height: 10,
