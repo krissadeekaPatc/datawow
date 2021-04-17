@@ -86,7 +86,6 @@ class _PublicPostPageState extends State<PublicPostPage> {
                             TextField(
                               onChanged: (value) {
                                 setState(() {
-                                  print(controllerText.text.length);
                                   controllerText.text = value;
                                   controllerText.selection =
                                       TextSelection.fromPosition(TextPosition(

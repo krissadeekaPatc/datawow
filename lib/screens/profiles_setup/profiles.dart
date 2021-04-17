@@ -85,8 +85,16 @@ class _ProfilesSettingState extends State<ProfilesSetting> {
         onSaved: (newValue) {
           setState(() {
             controller.text = newValue;
-            print(controller.text);
+            controller.selection = TextSelection.fromPosition(
+                TextPosition(offset: controller.text.length));
           });
+        },
+        validator: (v) {
+          if (v.isEmpty) {
+            return "Please enter display name";
+          } else {
+            return null;
+          }
         },
         obscureText: obs,
         controller: controller,
@@ -100,7 +108,13 @@ class _ProfilesSettingState extends State<ProfilesSetting> {
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(25),
               borderSide: BorderSide(color: Colors.white)),
-          focusedBorder: OutlineInputBorder(),
+          focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(25),
+              borderSide: BorderSide(color: Colors.white)),
+          errorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(25),
+              borderSide: BorderSide(color: Colors.white)),
+          focusedErrorBorder: OutlineInputBorder(),
         ),
       ),
     );
@@ -231,27 +245,6 @@ class _ProfilesSettingState extends State<ProfilesSetting> {
                                                   name,
                                                   "",
                                                   false),
-                                              // buildTFF(
-                                              //     snapshot.data[0].email ??
-                                              //         "NULL",
-                                              //     "Email",
-                                              //     email,
-                                              //     "",
-                                              //     false),
-                                              // buildTFF("Password", "Password",
-                                              //     password, "", true),
-                                              // buildTFF(
-                                              //     "New password",
-                                              //     "New password",
-                                              //     newPass,
-                                              //     "",
-                                              //     true),
-                                              // buildTFF(
-                                              //     "Confirm new password",
-                                              //     "Confirm  password",
-                                              //     cfPass,
-                                              //     "",
-                                              //     true),
                                               RaisedButton(
                                                 child: Text("ตกลง"),
                                                 onPressed: () {
