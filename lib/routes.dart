@@ -31,11 +31,11 @@ class AppRoutes extends StatelessWidget {
     try {
       if (_auth.currentUser.uid != null) {
         return "/home";
-      } else {}
+      }
+      return "/login";
     } catch (e) {
       return "/login";
     }
-    return "/login";
   }
 
   @override

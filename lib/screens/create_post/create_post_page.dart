@@ -244,7 +244,7 @@ class _PublicPostPageState extends State<PublicPostPage> {
       });
       resultList = await MultiImagePicker.pickImages(
         maxImages: 4,
-        enableCamera: true,
+        enableCamera: false,
         selectedAssets: images,
         cupertinoOptions: CupertinoOptions(
           takePhotoIcon: "chat",
